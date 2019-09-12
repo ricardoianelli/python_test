@@ -23,7 +23,6 @@ schema = [
     ('telefone', 'cardinality', 'many'),
 ]
 
-
 def dict_to_facts(dic):
     fact_list = []
     for entity, fact in dic.items():
@@ -39,19 +38,13 @@ def get_current_facts(facts, schema):
     for fact in facts:
         entity = clean_facts.get(fact[0], {})
         attr = entity.get(fact[1], [])
-        if many_cardionality[fact[1]]:
-            if fact[3]:
+        if fact[3]:
+            if not many_cardionality[fact[1]] and len(attr) > 0:
+                attr[0] = fact[2]
+            else:
                 attr.append(fact[2])
-            else:
-                attr.remove(fact[2])
         else:
-            if fact[3]:
-                if len(attr) > 0:
-                    attr[0] = fact[2]
-                else:
-                    attr.append(fact[2])
-            else:
-                attr.remove(fact[2])
+            attr.remove(fact[2])
                 
         entity[fact[1]] = attr
         clean_facts[fact[0]] = entity

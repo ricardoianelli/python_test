@@ -79,7 +79,7 @@ def test_get_current_facts_format_1():
     ('joão', 'endereço', 'rua bob, 88', True),
     ('joão', 'telefone', '234-5678', True),
     ]
-  with pytest.raises(KeyError):
+  with pytest.raises(IndexError):
       storm.get_current_facts(facts, storm.schema)
       
 def test_get_current_facts_format_2():
@@ -109,6 +109,6 @@ def test_get_current_facts_format_4():
     ('joão', 'endereço', 'rua bob, 88', True),
     ('telefone', '234-5678', True),
     ]
-  with pytest.raises(KeyError):
+  with pytest.raises(IndexError):
       storm.get_current_facts(facts, storm.schema)
   
