@@ -1,3 +1,14 @@
+## Guia de uso
+
+Para instalar dependências:
+> pip3 install -r requirements.txt
+
+Para executar o código:
+> python3 python_challenge.py
+
+Para executar os testes:
+> python3 test_python_challenge.py
+
 # O desafio:
 
 Considere um modelo de informação, onde um registro é representado por uma "tupla".
