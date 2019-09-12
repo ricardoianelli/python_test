@@ -1,4 +1,4 @@
-# The challenge:
+# O desafio:
 
 Considere um modelo de informação, onde um registro é representado por uma "tupla".
 Uma tupla (ou lista) nesse contexto é chamado de fato.
