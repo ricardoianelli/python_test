@@ -34,14 +34,14 @@ def dict_to_facts(dic):
     return fact_list
     
 def get_current_facts(facts, schema):
-    many_cardionality = {attr[0]: (attr[2] == 'many') for attr in schema}
+    many_cardinality = {attr[0]: (attr[2] == 'many') for attr in schema}
     clean_facts = {}
     
     for fact in facts:
         entity = clean_facts.get(fact[0], {})
         attr = entity.get(fact[1], [])
         if fact[3]:
-            if not many_cardionality[fact[1]] and len(attr) > 0:
+            if not many_cardinality[fact[1]] and len(attr) > 0:
                 attr[0] = fact[2]
             else:
                 attr.append(fact[2])
