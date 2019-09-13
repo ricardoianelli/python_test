@@ -8,7 +8,7 @@ Created on Wed Sep 11 21:06:36 2019
 from datetime import datetime
 
 # Define base data
-facts = [
+FACTS = [
     ('gabriel', 'endereço', 'av rio branco, 109', True),
     ('joão', 'endereço', 'rua alice, 10', True),
     ('joão', 'endereço', 'rua bob, 88', True),
@@ -20,7 +20,7 @@ facts = [
 ]
 
 # Define data cardinality
-schema = [
+SCHEMA = [
     ('endereço', 'cardinality', 'one'),
     ('telefone', 'cardinality', 'many'),
 ]
@@ -58,6 +58,6 @@ def get_current_facts(facts, schema):
 if __name__ == '__main__':
     print('Starting....')
     print('Date: %s' % datetime.now())
-    current_facts = get_current_facts(facts, schema)
+    current_facts = get_current_facts(FACTS, SCHEMA)
     print(current_facts)
     print('Finished.')
