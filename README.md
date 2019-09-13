@@ -24,32 +24,36 @@ Para indicar a remoção (ou retração) de uma informação, o quarto elemento 
 Como é comum em um modelo de entidades, os atributos de uma entidade pode ter cardinalidade 1 ou N (muitos).
 
 ### Segue um exemplo de fatos no formato de tuplas (i.e. E, A, V, added?)
-facts = [  
-  ('gabriel', 'endereço', 'av rio branco, 109', True),  
-  ('joão', 'endereço', 'rua alice, 10', True),  
-  ('joão', 'endereço', 'rua bob, 88', True),  
-  ('joão', 'telefone', '234-5678', True),  
-  ('joão', 'telefone', '91234-5555', True),  
-  ('joão', 'telefone', '234-5678', False),  
-  ('gabriel', 'telefone', '98888-1111', True),  
-  ('gabriel', 'telefone', '56789-1010', True),  
-]
+  ```python
+  facts = [  
+    ('gabriel', 'endereço', 'av rio branco, 109', True),  
+    ('joão', 'endereço', 'rua alice, 10', True),  
+    ('joão', 'endereço', 'rua bob, 88', True),  
+    ('joão', 'telefone', '234-5678', True),  
+    ('joão', 'telefone', '91234-5555', True),  
+    ('joão', 'telefone', '234-5678', False),  
+    ('gabriel', 'telefone', '98888-1111', True),  
+    ('gabriel', 'telefone', '56789-1010', True),  
+  ]
+```
 
 Vamos assumir que essa lista de fatos está ordenada dos mais antigos para os mais recentes. 
 Nesse schema, o atributo 'telefone' tem cardinalidade 'muitos' (one-tomany), e 'endereço' é 'one-to-one'.
 
+```python
 schema = [  
-('endereço', 'cardinality', 'one'),  
-('telefone', 'cardinality', 'many')    
+  ('endereço', 'cardinality', 'one'),  
+  ('telefone', 'cardinality', 'many')    
 ]
-
+```
 Nesse exemplo, os seguintes registros representam o histórico de endereços que joão já teve:
 
+```python
 (  
-('joão', 'endereço', 'rua alice, 10', True)  
-('joão', 'endereço', 'rua bob, 88', True),  
+  ('joão', 'endereço', 'rua alice, 10', True)  
+  ('joão', 'endereço', 'rua bob, 88', True),  
 )
-
+```
 E o fato considerado vigente (ou ativo) é o último.
 
 O objetivo desse desafio é escrever uma função que retorne quais são os fatos vigentes sobre essas entidades.  
@@ -57,10 +61,12 @@ Ou seja, quais são as informações que estão valendo no momento atual.
 A função deve receber `facts` (todos fatos conhecidos) e `schema` como argumentos.  
 
 ### Resultado esperado para este exemplo (mas não precisa ser nessa ordem):
+```python
 [  
-('gabriel', 'endereço', 'av rio branco, 109', True),  
-('joão', 'endereço', 'rua bob, 88', True),  
-('joão', 'telefone', '91234-5555', True),  
-('gabriel', 'telefone', '98888-1111', True),  
-('gabriel', 'telefone', '56789-1010', True)  
+  ('gabriel', 'endereço', 'av rio branco, 109', True),  
+  ('joão', 'endereço', 'rua bob, 88', True),  
+  ('joão', 'telefone', '91234-5555', True),  
+  ('gabriel', 'telefone', '98888-1111', True),  
+  ('gabriel', 'telefone', '56789-1010', True)  
 ]
+```
