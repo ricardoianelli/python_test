@@ -5,6 +5,8 @@ Created on Wed Sep 11 21:06:36 2019
 @author: RICARDO
 """
 
+from datetime import datetime
+
 # Define base data
 facts = [
     ('gabriel', 'endereço', 'av rio branco, 109', True),
@@ -53,4 +55,9 @@ def get_current_facts(facts, schema):
     clean_facts.sort()
     return clean_facts
      
-current_facts = get_current_facts(facts, schema)
+if __name__ == '__main__':
+    print('Starting....')
+    print('Date: %s' % datetime.now())
+    current_facts = get_current_facts(facts, schema)
+    print(current_facts)
+    print('Finished.')

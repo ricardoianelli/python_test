@@ -6,3 +6,4 @@ __pycache__/storm_dict.cpython-36.pyc
 __pycache__/test_storm.cpython-36-PYTEST.pyc
 __pycache__/test_storm_dict.cpython-36-PYTEST.pyc
 *.pyc
+.pytest_cache/v/cache/stepwise
