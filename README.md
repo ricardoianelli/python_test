@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ricardoianelli/python_test.svg?branch=master)](https://travis-ci.org/ricardoianelli/python_test)
+
 ## Guia de uso
 
 Para instalar dependências:
