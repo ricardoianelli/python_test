@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ricardoianelli/python_test.svg?branch=master)](https://travis-ci.org/ricardoianelli/python_test)
-
+[![codecov](https://codecov.io/gh/ricardoianelli/python_test/branch/master/graph/badge.svg)](https://codecov.io/gh/ricardoianelli/python_test)
 ## Guia de uso
 
 Para instalar dependências:
