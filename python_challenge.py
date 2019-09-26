@@ -25,6 +25,7 @@ SCHEMA = [
     ('telefone', 'cardinality', 'many'),
 ]
 
+
 def dict_to_facts(dic):
     fact_list = []
     for entity, fact in dic.items():
@@ -32,7 +33,8 @@ def dict_to_facts(dic):
             for value in values:
                 fact_list.append((entity, attribute, value, True))
     return fact_list
-    
+
+
 def get_current_facts(facts, schema):
     many_cardinality = {attr[0]: (attr[2] == 'many') for attr in schema}
     clean_facts = {}
@@ -54,7 +56,8 @@ def get_current_facts(facts, schema):
     clean_facts = dict_to_facts(clean_facts)
     clean_facts.sort()
     return clean_facts
-     
+
+
 if __name__ == '__main__':
     print('Starting....')
     print('Date: %s' % datetime.now())

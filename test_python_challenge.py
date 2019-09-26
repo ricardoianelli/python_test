@@ -17,7 +17,7 @@ def test_expected_get_current_facts_1():
         ('joão', 'endereço', 'rua bob, 88', True),
         ('joão', 'telefone', '91234-5555', True),
     ]
-    actual = pc.get_current_facts(pc.facts, pc.schema)
+    actual = pc.get_current_facts(pc.FACTS, pc.SCHEMA)
     message = "Expected return value: {0}, Actual return value: {1}".format(expected, actual)
     # Complete the assert statement
     assert actual == expected, message
@@ -41,7 +41,7 @@ def test_expected_get_current_facts_2():
         ('joão', 'endereço', 'rua bob, 88', True),
         ('joão', 'telefone', '91234-5555', True),
     ]
-    actual = pc.get_current_facts(facts, pc.schema)
+    actual = pc.get_current_facts(facts, pc.SCHEMA)
     message = "Expected return value: {0}, Actual return value: {1}".format(expected, actual)
     # Complete the assert statement
     assert actual == expected, message
@@ -67,7 +67,7 @@ def test_expected_get_current_facts_3():
         ('joão', 'endereço', 'rua bob, 88', True),
         ('joão', 'telefone', '91234-5555', True),
     ]
-    actual = pc.get_current_facts(facts, pc.schema)
+    actual = pc.get_current_facts(facts, pc.SCHEMA)
     message = "Expected return value: {0}, Actual return value: {1}".format(expected, actual)
     # Complete the assert statement
     assert actual == expected, message
@@ -80,7 +80,7 @@ def test_get_current_facts_format_1():
         ('joão', 'telefone', '234-5678', True),
     ]
     with pytest.raises(IndexError):
-        pc.get_current_facts(facts, pc.schema)
+        pc.get_current_facts(facts, pc.SCHEMA)
       
 def test_get_current_facts_format_2():
     facts = [
@@ -90,7 +90,7 @@ def test_get_current_facts_format_2():
         ('joão', 'telefone', '234-5678', True),
     ]
     with pytest.raises(IndexError):
-        pc.get_current_facts(facts, pc.schema)
+        pc.get_current_facts(facts, pc.SCHEMA)
       
 def test_get_current_facts_format_3():
     facts = [
@@ -100,7 +100,7 @@ def test_get_current_facts_format_3():
         ('joão', 'telefone', True),
     ]
     with pytest.raises(IndexError):
-        pc.get_current_facts(facts, pc.schema)
+        pc.get_current_facts(facts, pc.SCHEMA)
       
 def test_get_current_facts_format_4():
     facts = [
@@ -110,5 +110,5 @@ def test_get_current_facts_format_4():
         ('telefone', '234-5678', True),
     ]
     with pytest.raises(IndexError):
-        pc.get_current_facts(facts, pc.schema)
+        pc.get_current_facts(facts, pc.SCHEMA)
   
